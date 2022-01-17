@@ -52,7 +52,7 @@ app.layout = html.Div([
     html.Div([
     #html.Img(src="/assests/1.png"),
     html.H2("BIZDATA INSIGHTS - INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title"),
-    html.H6(dcc.Markdown(children=markdown_text)),
+    html.H6("Welcome To INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title"),
     html.Br(),
     html.H5("Select a Sector/Industry"),
     html.Div([
