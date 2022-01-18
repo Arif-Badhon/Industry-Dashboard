@@ -128,7 +128,7 @@ def graph_build(type, indicator, Sector):
         figure.update_layout(title={'text':"Yearly data plot of "+ indicator,  'y':0.9,
             'x':0.5,'xanchor':'center', 'yanchor':'top'}, xaxis_title="Source: " + str(np.unique(CalenderYearData['Source'])[0]), yaxis_title=str(np.unique(CalenderYearData['Unit'])[0]))
         for data in figure.data:
-            data["width"] = 0.3
+            data["width"] = 0.5
         #figure.show()
         #figure.update_traces(texttemplate='%{text:.2s}', textposition='outside')
         #figure.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
@@ -140,7 +140,7 @@ def graph_build(type, indicator, Sector):
         figure.update_layout(title={'text':"Budget Yearly data plot of "+ indicator,  'y':0.9,
             'x':0.5,'xanchor':'center', 'yanchor':'top'}, xaxis_title="Source: " + str(np.unique(BudgetYearData['Source'])[0]), yaxis_title=str(np.unique(BudgetYearData['Unit'])[0]))
         for data in figure.data:
-            data["width"] = 0.3
+            data["width"] = 0.5
         return figure
     else:
         cdata = MonthlyData[["Calendar Year", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]]
