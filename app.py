@@ -174,7 +174,7 @@ def graph_build(type, indicator, Sector):
         ])
         figure.update_layout(barmode='group')
         figure.update_layout(title={'text':"Monthly data plot of "+ indicator + " , Unit of Measure " + str(np.unique(MonthlyData['Unit'])[0]),  'y':0.9,
-            'x':0.5,'xanchor':'center', 'yanchor':'top'}, xaxis_title="Source: " + str(np.unique(MonthlyData['Source'])), yaxis_title=str(np.unique(MonthlyData['Unit'])))
+            'x':0.5,'xanchor':'center', 'yanchor':'top'}, xaxis_title="Source: " + str(np.unique(MonthlyData['Source'])[0]), yaxis_title=str(np.unique(MonthlyData['Unit'])[0]))
         return figure
 
 
