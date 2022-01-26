@@ -137,7 +137,7 @@ def graph_build(type, indicator, Sector):
         cdata = BudgetYearData[['Budget Year', 'Budget Value']]
         cdata = cdata.sort_values('Budget Year')
         figure = px.bar(cdata, x='Budget Year', y='Budget Value', text='Budget Value')
-        figure.update_layout(title={'text':"Budget Yearly data plot of "+ indicator,  'y':0.93,
+        figure.update_layout(title={'text':indicator,  'y':0.93,
             'x':0.5,'xanchor':'center', 'yanchor':'top'}, xaxis_title="Source: " + str(np.unique(BudgetYearData['Source'])[0]) + "                                  " + "Unit of Measurement: " + str(np.unique(BudgetYearData['Unit'])[0]), yaxis_title="")
         for data in figure.data:
             data["width"] = 0.5
