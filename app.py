@@ -35,44 +35,22 @@ collection.drop('_id', inplace=True, axis=1)
 
 industry_name = collection['Sector'].unique()
 
-markdown_text = '''
-#### **Welcome to Industry Dashboard!**
 
-
-*150+ Indicators* &nbsp; &nbsp; *More than 50 thousands Data points*
-
-
-
-###### INSTRUCTIONS
-
-###### Select Sector/Industry --> Select Indicator --> Select Relevant Timeline (Monthly, Yearly or Budget Yearly)
-'''
-
-app.layout = html.Div([ 
+app.layout =html.Div([
     html.Div([
-    #html.Img(src="/assests/1.png"),
-    html.H2("BIZDATA INSIGHTS - INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title"),
-    html.H6("Welcome To INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title"),
+        html.H1("BIZDATA INSIGHTS - INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title"),
+        html.H6("Welcome To INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title")
+    ]),
     html.Br(),
-    html.H5("Select a Sector/Industry"),
+    html.Br(),
     html.Div([
-        html.Div([
-            dcc.Dropdown(
-                id="Sector",
-                options=[{'label':i, 'value': i} for i in industry_name],
-                value='Select'
-            ),
-            html.Br(),
-            html.H6("Select Indicator"),
-            dcc.Dropdown(id='indicator'),
-            html.Br(),
-            html.H6("Choose best visualization type"),
-            dcc.Dropdown(id='type'),
-            html.Br(),
-            dcc.Graph(id='graph')
-        ])
-    ])
-])
+        html.Div([html.H6("Select Sector / Industry"), dcc.Dropdown(id="Sector", options=[{'label':i, 'value': i} for i in industry_name], value='Select')], className="four columns"),
+        html.Div([html.H6("Select Indicator"), dcc.Dropdown(id='indicator')], className="four columns"),
+        html.Div([html.H6("Choose Relevant Timeline"), dcc.Dropdown(id='type')], className="four columns")
+    ], className='row'),
+    html.Br(),
+    html.Br(),
+    html.Div([dcc.Graph(id='graph')])
 ])
 
 @app.callback(
