@@ -33,7 +33,7 @@ collection = pd.DataFrame(collection)
 collection.drop('_id', inplace=True, axis=1)
 
 
-industry_name = collection['Sector'].unique()
+industry_name = sorted(collection['Sector'].unique())
 
 
 app.layout =html.Div([
