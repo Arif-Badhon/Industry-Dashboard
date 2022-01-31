@@ -46,7 +46,7 @@ app.layout =html.Div([
     html.Div([
         html.Div([html.H6("Select Sector / Industry"), dcc.Dropdown(id="Sector", options=[{'label':i, 'value': i} for i in industry_name], value='Select')], className="four columns"),
         html.Div([html.H6("Select Indicator"), dcc.Dropdown(id='indicator')], className="four columns"),
-        html.Div([html.H6("Choose Relevant Timeline"), dcc.Dropdown(id='type')], className="four columns")
+        html.Div([html.H6("Select Timeline"), dcc.Dropdown(id='type')], className="four columns")
     ], className='row'),
     html.Br(),
     html.Br(),
