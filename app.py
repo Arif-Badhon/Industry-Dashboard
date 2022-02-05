@@ -50,7 +50,7 @@ app.layout =html.Div([
     ], className='row'),
     html.Br(),
     html.Br(),
-    html.Div([dcc.Graph(id='graph')])
+    html.Div([dcc.Graph(id='graph', figure = {}, config={"displaylogo": False, 'modeBarButtonsToRemove':['toImage', 'pan2d', 'select2d', 'lasso2d']})])
 ])
 
 @app.callback(
@@ -97,7 +97,7 @@ def graph_build(type, indicator, Sector):
     BudgetYearData = data[~data['Budget Value'].isnull()]
     MonthlyData = data[~data['Calendar Year'].isnull() & data['Calendar Value'].isnull()]
 
-    figure = {}
+    #figure = {}
 
     if type == 'Yearly':
         cdata = CalenderYearData[['Calendar Year', 'Calendar Value']]
