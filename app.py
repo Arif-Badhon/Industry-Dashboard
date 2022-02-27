@@ -103,7 +103,7 @@ def graph_build(type, indicator, Sector):
         cdata = CalenderYearData[['Calendar Year', 'Calendar Value']]
         cdata = cdata.sort_values('Calendar Year')
         figure = px.bar(cdata, x='Calendar Year', y='Calendar Value', text='Calendar Value')
-        figure.update_layout(title={'text':"Yearly data plot of "+ indicator,  'y':0.93,
+        figure.update_layout(title={'text':indicator,  'y':0.93,
             'x':0.5,'xanchor':'center', 'yanchor':'top'}, xaxis_title="Source: " + str(np.unique(CalenderYearData['Source'])[0]) + "                                  " + "Unit of Measurement: " + str(np.unique(CalenderYearData['Unit'])[0]), yaxis_title="")
         for data in figure.data:
             data["width"] = 0.5
@@ -151,7 +151,7 @@ def graph_build(type, indicator, Sector):
             go.Bar(name='December', x=Year, y=December)
         ])
         figure.update_layout(barmode='group')
-        figure.update_layout(title={'text':"Monthly data plot of "+ indicator,  'y':0.93,
+        figure.update_layout(title={'text':indicator,  'y':0.93,
             'x':0.5,'xanchor':'center', 'yanchor':'top'}, xaxis_title="Source: " + str(np.unique(MonthlyData['Source'])[0]) + "                                  "  + "Unit of Measurement: " + str(np.unique(MonthlyData['Unit'])[0]), yaxis_title="")
         return figure
 
