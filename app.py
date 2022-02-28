@@ -38,8 +38,8 @@ industry_name = sorted(collection['Sector'].unique())
 
 app.layout =html.Div([
     html.Div([
-        html.H1("BIZDATA INSIGHTS - INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title"),
-        html.H6("Welcome To INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title")
+        html.H1("WELCOME TO DATA TERMINAL", style={'textAlign':'center'}, className="app-header--title"),
+        html.H6("INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title")
     ]),
     html.Br(),
     html.Br(),
