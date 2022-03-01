@@ -16,7 +16,9 @@ external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 # VALID_USERNAME_PASSWORD_PAIRS = {
 #     'arif': '@arf121!'
 # }
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets, title='Industry Dashboard')
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets,     meta_tags=[
+        {"name": "viewport", "content": "width=device-width, initial-scale=1"}
+    ],title='Industry Dashboard')
 
 server = app.server
 
