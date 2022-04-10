@@ -105,7 +105,7 @@ def graph_build(type, indicator, Sector):
         cdata = CalenderYearData[['Calendar Year', 'Calendar Value']]
         cdata = cdata.sort_values('Calendar Year')
         cdata = cdata.sort_values('Calendar Year')
-        cdata['Calendar Year'] = cdata['Calendar Year'].map(str)
+        cdata['Calendar Year'] = cdata['Calendar Year'].map(int).map(str)
         figure = px.bar(cdata, x='Calendar Year', y='Calendar Value', text='Calendar Value')
         figure.update_layout(title={'text':indicator,  'y':0.93,
             'x':0.5,'xanchor':'center', 'yanchor':'top'}, xaxis_title="Source: " + str(np.unique(CalenderYearData['Source'])[0]) + "                                  " + "Unit of Measurement: " + str(np.unique(CalenderYearData['Unit'])[0]), yaxis_title="")
@@ -127,7 +127,7 @@ def graph_build(type, indicator, Sector):
     else:
         cdata = MonthlyData[["Calendar Year", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]]
         cdata = cdata.sort_values('Calendar Year')
-        cdata['Calendar Year'] = cdata['Calendar Year'].map(str)
+        cdata['Calendar Year'] = cdata['Calendar Year'].map(int).map(str)
         Year = cdata["Calendar Year"]
         January = cdata["Jan"]
         February = cdata["Feb"]
