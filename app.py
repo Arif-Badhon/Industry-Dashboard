@@ -41,7 +41,7 @@ app.layout =html.Div([
     html.Div([
         html.H1("WELCOME TO DATA TERMINAL", style={'textAlign':'center'}, className="app-header--title"),
         html.H6("INDUSTRY DASHBOARD", style={'textAlign':'center'}, className="app-header--title"),
-        html.H6("This is Beta Version, Please let us know the feedback at data@bizdatainsights.com", style={'textAlign':'center'}, className="app-header--title")
+        html.H6("This is Beta Version, please let us know the feedback at data@bizdatainsights.com", style={'textAlign':'center'}, className="app-header--title")
     ]),
     html.Br(),
     html.Br(),
